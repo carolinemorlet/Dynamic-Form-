@@ -1,24 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
+import formJson from './formElement.json';
+import Element from './components/Element';
+import { FormContext } from './FormContext';
 
 function App() {
+  const [elements, setElements] = useState(null);
+  useEffect(() => {
+    setElements(formJson);
+  }, []);
+  const { fields } = elements ?? {};
+  const handlesubmit = () => {
+    console.log(elements);
+  };
+  const handleChange = (id, event) => {
+    const newElements = { ...elements };
+    newElements.fields.forEach((data) => {
+      const {
+        type,
+        name,
+        field,
+        id,
+        label,
+        visible,
+        required,
+        readonly,
+        currencyChar,
+        nbDecimal,
+        items,
+        ListId,
+        ordeR_ITEM,
+        multipleClosedList,
+      } = data;
+      if (field === 'field') {
+        field['field'] = event.target.value;
+      }
+      setElements(newElements);
+    });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FormContext.Provider value={{ handleChange }}>
+      <div className="App container">
+        <form className="row g-3">
+          {fields
+            ? fields.map((data, i) => <Element key={i} data={data} />)
+            : null}
+
+          <div className="col-auto">
+            <button type="submit" className="btn btn-primary mb-3">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </FormContext.Provider>
   );
 }
 
