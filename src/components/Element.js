@@ -4,116 +4,107 @@ import Select from './elements/Select';
 import Textarea from './elements/Textarea';
 
 const Element = ({
-  data: {
-    type,
-    name,
-    field,
-    id,
-    label,
-    visible,
-    required,
-    readonly,
-    currencyChar,
-    nbDecimal,
-    items,
-    ListId,
-    ordeR_ITEM,
-    multipleClosedList,
-  },
+  data
+
+  ,
 }) => {
-  switch (type) {
+
+  switch (data.type) {
     case 'EDIT_STRING':
       return (
         <Input
-          type={type}
-          name={name}
-          field={field}
-          id={id}
-          label={label}
-          visible={visible}
-          requred={required}
-          readonly={readonly}
-          currencyChar={currencyChar}
-          nbDecimal={nbDecimal}
-          ListId={ListId}
-          ordeR_ITEM={ordeR_ITEM}
-          multipleClosedList={multipleClosedList}
+          type={data.type}
+          name={data.name}
+          field={data.field}
+          id={data.id}
+          label={data.label}
+          visible={data.visible}
+          requred={data.required}
+          readonly={data.readonly}
+          currencyChar={data.currencyChar}
+          nbDecimal={data.nbDecimal}
+          ListId={data.ListId}
+          ordeR_ITEM={data.ordeR_ITEM}
+          multipleClosedList={data.multipleClosedList}
         />
       );
 
     case 'NUMBER':
       return (
         <Input
-          type={type}
-          name={name}
-          field={field}
-          id={id}
-          label={label}
-          visible={visible}
-          requred={required}
-          readonly={readonly}
-          currencyChar={currencyChar}
-          nbDecimal={nbDecimal}
-          ListId={ListId}
-          ordeR_ITEM={ordeR_ITEM}
-          multipleClosedList={multipleClosedList}
+        type={data.type}
+        name={data.name}
+        field={data.field}
+        id={data.id}
+        label={data.label}
+        visible={data.visible}
+        requred={data.required}
+        readonly={data.readonly}
+        currencyChar={data.currencyChar}
+        nbDecimal={data.nbDecimal}
+        ListId={data.ListId}
+        ordeR_ITEM={data.ordeR_ITEM}
+        multipleClosedList={data.multipleClosedList}
         />
       );
 
     case 'DATE':
       return (
         <Input
-          type={type}
-          name={name}
-          field={field}
-          id={id}
-          label={label}
-          visible={visible}
-          requred={required}
-          readonly={readonly}
-          currencyChar={currencyChar}
-          nbDecimal={nbDecimal}
-          ListId={ListId}
-          ordeR_ITEM={ordeR_ITEM}
-          multipleClosedList={multipleClosedList}
+        type={data.type}
+        name={data.name}
+        field={data.field}
+        id={data.id}
+        label={data.label}
+        visible={data.visible}
+        requred={data.required}
+        readonly={data.readonly}
+        currencyChar={data.currencyChar}
+        nbDecimal={data.nbDecimal}
+        ListId={data.ListId}
+        ordeR_ITEM={data.ordeR_ITEM}
+        multipleClosedList={data.multipleClosedList}
         />
       );
 
     case 'RICH_EDIT':
       return (
         <Textarea
-          type={type}
-          name={name}
-          field={field}
-          id={id}
-          label={label}
-          visible={visible}
-          requred={required}
-          readonly={readonly}
-          currencyChar={currencyChar}
-          nbDecimal={nbDecimal}
-          ListId={ListId}
-          ordeR_ITEM={ordeR_ITEM}
-          multipleClosedList={multipleClosedList}
+        type={data.type}
+        name={data.name}
+        field={data.field}
+        id={data.id}
+        label={data.label}
+        visible={data.visible}
+        requred={data.required}
+        readonly={data.readonly}
+        currencyChar={data.currencyChar}
+        nbDecimal={data.nbDecimal}
+        ListId={data.ListId}
+        ordeR_ITEM={data.ordeR_ITEM}
+        multipleClosedList={data.multipleClosedList}
+
         />
       );
 
     case 'COMBO_CLOSED_INDEX_STRING':
       return (
         <Select
-          type={type}
-          name={name}
-          field={field}
-          id={id}
-          label={label}
-          visible={visible}
-          requred={required}
-          readonly={readonly}
-          currencyChar={currencyChar}
-          nbDecimal={nbDecimal}
-          ListId={ListId}
-          ordeR_ITEM={ordeR_ITEM}
-          multipleClosedList={multipleClosedList}
+        type={data.type}
+        name={data.name}
+        field={data.field}
+        id={data.id}
+        label={data.label}
+        visible={data.visible}
+        requred={data.required}
+        readonly={data.readonly}
+        currencyChar={data.currencyChar}
+        nbDecimal={data.nbDecimal}
+        ListId={data.ListId}
+        ordeR_ITEM={data.ordeR_ITEM}
+        multipleClosedList={data.multipleClosedList}
+          items={data.items}
+          
         />
       );
 

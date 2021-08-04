@@ -15,7 +15,8 @@ const Select = ({
   ListId,
   ordeR_ITEM,
   multipleClosedList,
-}) => {
+}) => { 
+  console.log(items)
   return (
     <div>
       <label htmlFor={name} className="visually-hidden">
